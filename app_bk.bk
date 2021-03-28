@@ -15,13 +15,6 @@ querystring = [{"country_code": "england",
                 "league_code": "premier-league", "timezone_utc": "0:00"},
                {"country_code": "england", "league_code": "premier-league"}]
 
-headers = [{
-    'x-rapidapi-key': "a211671f52msh0c9150df05ba8bbp167c03jsn6ab2a432ba9b",
-    'x-rapidapi-host': "livescore-football.p.rapidapi.com"
-}, {
-    'x-rapidapi-key': "a211671f52msh0c9150df05ba8bbp167c03jsn6ab2a432ba9b",
-    'x-rapidapi-host': "livescore-football.p.rapidapi.com"
-}]
 
 # Team List
 teamList = ['Tottenham Hotspur', 'Brighton & Hove Albion',

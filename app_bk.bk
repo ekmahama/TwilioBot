@@ -99,6 +99,19 @@ def receive_sms():
         toDay = datetime.today().strftime("%Y%m%d")
 
         output = gamesForToday(output, data1, toDay)
+        # for match in data1:
+        #     startTime = str(match['time']['start'])[:8]
+        #     if toDay == startTime:
+        #         team1Name = match['team_2']['name']
+        #         team2Name = match['team_1']['name']
+        #         team1Score = match['score']['full_time']['team_1']
+        #         team2Score = match['score']['full_time']['team_2']
+        #         status = match['status']
+
+        #         output += f"\n{team1Name:<22} {team1Score}    :   {team2Name:<22} {team2Score} {status}"
+
+        #     if not output:
+        #         output += "No matches happening today"
 
     elif body.lower() in teamList:
         data = getData(tDay=False)
@@ -107,9 +120,28 @@ def receive_sms():
 
         output = getTeamList(output, queryTeam, data)
 
+        # for team in data:
+        #     if team['team_name'] == queryTeam:
+        #         output += f"{queryTeam}\n"
+        #         output += f"{'-----------------------------------------'}\n"
+        #         output += f"Postion         : {team['rank']}\n"
+        #         output += f"Points          : {team['points']}\n"
+        #         output += f"Games Played    : {team['games_played']}\n"
+        #         output += f"Goal Difference : {team['goals_diff']}\n"
+        #         output += f"Wins            : {team['won']}\n"
+        #         output += f"Loses           : {team['lost']}\n"
+        #     break
+
     elif body.lower() == 'table':
         data = getData(tDay=False)
         output = getLeagueTable(output, data)
+        # # Get complete table Informaton
+        # output += f"{'#':>2}\t{'TEAM':<20}\t{'P':<2}\t{'GD':>3}\t{'PTS':<2}\n"
+        # output = + \
+        #     f"{'------------------------------------------------------'}\n"
+        # for i, team in enumerate(data):
+        #     teamList.add(team['team_name'])
+        #     output += f"{(i+1):>2}\t{team['team_name']:<20}\t{team['games_played']:<2}\t{team['goals_diff']:>3}\t{team['points']:<2}\n"
 
     elif body.lower = "list":
         output = '\n'.join(teamList)
